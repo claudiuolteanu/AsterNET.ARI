@@ -8,18 +8,21 @@
         /// <param name="port"></param>
         /// <param name="username"></param>
         /// <param name="password"></param>
-        public StasisEndpoint(string host, int port, string username, string password)
+        /// <param name="pingPongInterval"></param>
+        public StasisEndpoint(string host, int port, string username, string password, int? pingPongInterval = null)
         {
             Host = host;
             Port = port;
             Username = username;
             Password = password;
+            PingPongInterval = pingPongInterval;
         }
 
         public string Host { get; set; }
         public int Port { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public int? PingPongInterval { get; set; }
 
         public string AriEndPoint
         {

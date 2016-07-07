@@ -54,7 +54,11 @@ namespace AsterNET.ARI.Middleware.Default
                 _client.Error += _client_Error;
                 _client.DataReceived += _client_DataReceived;
                 _client.Closed += _client_Closed;
-
+                if (_connectionInfo.PingPongInterval != null)
+                {
+                    _client.AutoSendPingInterval = _connectionInfo.PingPongInterval.Value;
+                    _client.EnableAutoSendPing = true;
+                }
                 _client.Open();
             }
             catch (Exception ex)
