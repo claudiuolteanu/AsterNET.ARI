@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:10
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,8 @@ namespace AsterNET.ARI.Actions
 		/// <param name="channelId">The unique id to assign the channel on creation.</param>
 		/// <param name="otherChannelId">The unique id to assign the second channel when using local channels.</param>
 		/// <param name="originator">The unique id of the channel which is originating this one.</param>
-		Channel Originate(string endpoint, string extension = null, string context = null, long? priority = null, string label = null, string app = null, string appArgs = null, string callerId = null, int? timeout = null, Dictionary<string, string> variables = null, string channelId = null, string otherChannelId = null, string originator = null);
+		/// <param name="formats">The format name capability list to use if originator is not specified. Ex. "ulaw,slin16".  Format names can be found with "core show codecs".</param>
+		Channel Originate(string endpoint, string extension = null, string context = null, long? priority = null, string label = null, string app = null, string appArgs = null, string callerId = null, int? timeout = null, Dictionary<string, string> variables = null, string channelId = null, string otherChannelId = null, string originator = null, string formats = null);
 		/// <summary>
 		/// Channel details.. 
 		/// </summary>
@@ -54,7 +55,8 @@ namespace AsterNET.ARI.Actions
 		/// <param name="variables">The "variables" key in the body object holds variable key/value pairs to set on the channel on creation. Other keys in the body object are interpreted as query parameters. Ex. { "endpoint": "SIP/Alice", "variables": { "CALLERID(name)": "Alice" } }</param>
 		/// <param name="otherChannelId">The unique id to assign the second channel when using local channels.</param>
 		/// <param name="originator">The unique id of the channel which is originating this one.</param>
-		Channel OriginateWithId(string channelId, string endpoint, string extension = null, string context = null, long? priority = null, string label = null, string app = null, string appArgs = null, string callerId = null, int? timeout = null, Dictionary<string, string> variables = null, string otherChannelId = null, string originator = null);
+		/// <param name="formats">The format name capability list to use if originator is not specified. Ex. "ulaw,slin16".  Format names can be found with "core show codecs".</param>
+		Channel OriginateWithId(string channelId, string endpoint, string extension = null, string context = null, long? priority = null, string label = null, string app = null, string appArgs = null, string callerId = null, int? timeout = null, Dictionary<string, string> variables = null, string otherChannelId = null, string originator = null, string formats = null);
 		/// <summary>
 		/// Delete (i.e. hangup) a channel.. 
 		/// </summary>

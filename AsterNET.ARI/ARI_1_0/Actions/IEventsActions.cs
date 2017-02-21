@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:09
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,8 @@ namespace AsterNET.ARI.Actions
 		/// WebSocket connection for events.. 
 		/// </summary>
 		/// <param name="app">Applications to subscribe to.</param>
-		Message EventWebsocket(string app);
+		/// <param name="subscribeAll">Subscribe to all Asterisk events. If provided, the applications listed will be subscribed to all events, effectively disabling the application specific subscriptions. Default is 'false'.</param>
+		Message EventWebsocket(string app, bool? subscribeAll = null);
 		/// <summary>
 		/// Generate a user event.. 
 		/// </summary>

@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:09
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +34,7 @@ namespace AsterNET.ARI.Actions
             {
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -62,7 +62,7 @@ namespace AsterNET.ARI.Actions
             {
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -90,7 +90,7 @@ namespace AsterNET.ARI.Actions
             {
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -114,7 +114,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Bridge not found", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -136,7 +136,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Bridge not found", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -170,7 +170,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Channel not in Stasis application", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -201,7 +201,58 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Channel not in this bridge", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
+            }
+		}
+		/// <summary>
+		/// Set a channel as the video source in a multi-party mixing bridge. This operation has no effect on bridges with two or fewer participants.. 
+		/// </summary>
+		/// <param name="bridgeId">Bridge's id</param>
+		/// <param name="channelId">Channel's id</param>
+		public void SetVideoSource(string bridgeId, string channelId)
+		{
+			string path = "/bridges/{bridgeId}/videoSource/{channelId}";
+			var request = GetNewRequest(path, HttpMethod.POST);
+			if(bridgeId != null)
+				request.AddUrlSegment("bridgeId", bridgeId);
+			if(channelId != null)
+				request.AddUrlSegment("channelId", channelId);
+			var response = Execute(request);
+			if((int)response.StatusCode >= 200 && (int)response.StatusCode < 300)
+				return;
+			switch((int)response.StatusCode)
+            {
+				case 404:
+					throw new AriException("Bridge or Channel not found", (int)response.StatusCode);
+				case 409:
+					throw new AriException("Channel not in Stasis application", (int)response.StatusCode);
+				case 422:
+					throw new AriException("Channel not in this Bridge", (int)response.StatusCode);
+				default:
+					// Unknown server response
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
+            }
+		}
+		/// <summary>
+		/// Removes any explicit video source in a multi-party mixing bridge. This operation has no effect on bridges with two or fewer participants. When no explicit video source is set, talk detection will be used to determine the active video stream.. 
+		/// </summary>
+		/// <param name="bridgeId">Bridge's id</param>
+		public void ClearVideoSource(string bridgeId)
+		{
+			string path = "/bridges/{bridgeId}/videoSource";
+			var request = GetNewRequest(path, HttpMethod.DELETE);
+			if(bridgeId != null)
+				request.AddUrlSegment("bridgeId", bridgeId);
+			var response = Execute(request);
+			if((int)response.StatusCode >= 200 && (int)response.StatusCode < 300)
+				return;
+			switch((int)response.StatusCode)
+            {
+				case 404:
+					throw new AriException("Bridge not found", (int)response.StatusCode);
+				default:
+					// Unknown server response
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -228,7 +279,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Bridge not in Stasis application", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -252,7 +303,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Bridge not in Stasis application", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -293,7 +344,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Bridge not in a Stasis application", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -334,7 +385,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Bridge not in a Stasis application", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -385,7 +436,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("The format specified is unknown on this system", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 	}

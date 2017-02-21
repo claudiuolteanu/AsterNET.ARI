@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:10
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System;
 using System.Collections.Generic;
@@ -63,6 +63,26 @@ namespace AsterNET.ARI.Actions
 		/// </summary>
 		/// <param name="moduleName">Module's name</param>
 		void ReloadModule(string moduleName);
+		/// <summary>
+		/// Gets Asterisk log channel information.. 
+		/// </summary>
+		List<LogChannel> ListLogChannels();
+		/// <summary>
+		/// Adds a log channel.. 
+		/// </summary>
+		/// <param name="logChannelName">The log channel to add</param>
+		/// <param name="configuration">levels of the log channel</param>
+		void AddLog(string logChannelName, string configuration);
+		/// <summary>
+		/// Deletes a log channel.. 
+		/// </summary>
+		/// <param name="logChannelName">Log channels name</param>
+		void DeleteLog(string logChannelName);
+		/// <summary>
+		/// Rotates a log channel.. 
+		/// </summary>
+		/// <param name="logChannelName">Log channel's name</param>
+		void RotateLog(string logChannelName);
 		/// <summary>
 		/// Get the value of a global variable.. 
 		/// </summary>

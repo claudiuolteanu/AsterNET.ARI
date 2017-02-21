@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:09
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System;
 using System.Collections.Generic;
@@ -24,6 +24,11 @@ namespace AsterNET.ARI.Models
 		/// Indicates the type of this message.
 		/// </summary>
 		public string Type { get; set; }
+
+		/// <summary>
+		/// The unique ID for the Asterisk instance that raised this event.
+		/// </summary>
+		public string Asterisk_id { get; set; }
 
 	}
 }

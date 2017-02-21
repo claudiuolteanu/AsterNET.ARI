@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:10
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System;
 using System.Collections.Generic;
@@ -21,14 +21,14 @@ namespace AsterNET.ARI.Models
 
 
 		/// <summary>
-		/// Device's state
-		/// </summary>
-		public string State { get; set; }
-
-		/// <summary>
 		/// Name of the device.
 		/// </summary>
 		public string Name { get; set; }
+
+		/// <summary>
+		/// Device's state
+		/// </summary>
+		public string State { get; set; }
 
 	}
 }

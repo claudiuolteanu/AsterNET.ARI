@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:09
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System;
 using System.Collections.Generic;
@@ -26,16 +26,6 @@ namespace AsterNET.ARI.Models
 		public string Eventname { get; set; }
 
 		/// <summary>
-		/// Custom Userevent data
-		/// </summary>
-		public object Userevent { get; set; }
-
-		/// <summary>
-		/// A endpoint that is signaled with the user event.
-		/// </summary>
-		public Endpoint Endpoint { get; set; }
-
-		/// <summary>
 		/// A channel that is signaled with the user event.
 		/// </summary>
 		public Channel Channel { get; set; }
@@ -44,6 +34,16 @@ namespace AsterNET.ARI.Models
 		/// A bridge that is signaled with the user event.
 		/// </summary>
 		public Bridge Bridge { get; set; }
+
+		/// <summary>
+		/// A endpoint that is signaled with the user event.
+		/// </summary>
+		public Endpoint Endpoint { get; set; }
+
+		/// <summary>
+		/// Custom Userevent data
+		/// </summary>
+		public object Userevent { get; set; }
 
 	}
 }

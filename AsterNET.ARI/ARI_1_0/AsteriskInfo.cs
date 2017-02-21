@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:10
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System;
 using System.Collections.Generic;
@@ -21,11 +21,6 @@ namespace AsterNET.ARI.Models
 
 
 		/// <summary>
-		/// Info about Asterisk status
-		/// </summary>
-		public StatusInfo Status { get; set; }
-
-		/// <summary>
 		/// Info about how Asterisk was built
 		/// </summary>
 		public BuildInfo Build { get; set; }
@@ -39,6 +34,11 @@ namespace AsterNET.ARI.Models
 		/// Info about Asterisk configuration
 		/// </summary>
 		public ConfigInfo Config { get; set; }
+
+		/// <summary>
+		/// Info about Asterisk status
+		/// </summary>
+		public StatusInfo Status { get; set; }
 
 	}
 }

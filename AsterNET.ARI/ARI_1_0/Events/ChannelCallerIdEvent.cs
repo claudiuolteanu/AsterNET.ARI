@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:09
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System;
 using System.Collections.Generic;
@@ -21,14 +21,14 @@ namespace AsterNET.ARI.Models
 
 
 		/// <summary>
-		/// The text representation of the Caller Presentation value.
-		/// </summary>
-		public string Caller_presentation_txt { get; set; }
-
-		/// <summary>
 		/// The integer representation of the Caller Presentation value.
 		/// </summary>
 		public int Caller_presentation { get; set; }
+
+		/// <summary>
+		/// The text representation of the Caller Presentation value.
+		/// </summary>
+		public string Caller_presentation_txt { get; set; }
 
 		/// <summary>
 		/// The channel that changed Caller ID.

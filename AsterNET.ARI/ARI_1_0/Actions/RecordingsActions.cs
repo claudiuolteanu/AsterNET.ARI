@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:10
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +34,7 @@ namespace AsterNET.ARI.Actions
             {
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -58,7 +58,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Recording not found", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -80,7 +80,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Recording not found", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -109,7 +109,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("A recording with the same name already exists on the system", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -133,7 +133,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Recording not found", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -155,7 +155,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Recording not found", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -177,7 +177,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Recording not found", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -201,7 +201,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Recording not in session", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -225,7 +225,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Recording not in session", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -249,7 +249,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Recording not in session", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 		/// <summary>
@@ -273,7 +273,7 @@ namespace AsterNET.ARI.Actions
 					throw new AriException("Recording not in session", (int)response.StatusCode);
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 	}

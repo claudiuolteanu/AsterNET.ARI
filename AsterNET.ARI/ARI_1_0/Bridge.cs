@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:09
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System;
 using System.Collections.Generic;
@@ -26,19 +26,14 @@ namespace AsterNET.ARI.Models
 		public string Id { get; set; }
 
 		/// <summary>
-		/// Ids of channels participating in this bridge
-		/// </summary>
-		public List<string> Channels { get; set; }
-
-		/// <summary>
-		/// Name the creator gave the bridge
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
 		/// Name of the current bridging technology
 		/// </summary>
 		public string Technology { get; set; }
+
+		/// <summary>
+		/// Type of bridge technology
+		/// </summary>
+		public string Bridge_type { get; set; }
 
 		/// <summary>
 		/// Bridging class
@@ -51,9 +46,24 @@ namespace AsterNET.ARI.Models
 		public string Creator { get; set; }
 
 		/// <summary>
-		/// Type of bridge technology
+		/// Name the creator gave the bridge
 		/// </summary>
-		public string Bridge_type { get; set; }
+		public string Name { get; set; }
+
+		/// <summary>
+		/// Ids of channels participating in this bridge
+		/// </summary>
+		public List<string> Channels { get; set; }
+
+		/// <summary>
+		/// The video mode the bridge is using. One of 'none', 'talker', or 'single'.
+		/// </summary>
+		public string Video_mode { get; set; }
+
+		/// <summary>
+		/// The ID of the channel that is the source of video in this bridge, if one exists.
+		/// </summary>
+		public string Video_source_id { get; set; }
 
 	}
 }

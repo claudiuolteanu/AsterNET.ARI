@@ -9,9 +9,9 @@ using AsterNET.ARI.Actions;
 namespace AsterNET.ARI.Models
 {
 	/// <summary>
-	/// Details of an Asterisk module
+	/// Details of an Asterisk log channel
 	/// </summary>
-	public class Module 
+	public class LogChannel 
 	{
 
 		/// <summary>
@@ -21,29 +21,24 @@ namespace AsterNET.ARI.Models
 
 
 		/// <summary>
-		/// The name of this module
+		/// The log channel path
 		/// </summary>
-		public string Name { get; set; }
+		public string Channel { get; set; }
 
 		/// <summary>
-		/// The description of this module
+		/// Types of logs for the log channel
 		/// </summary>
-		public string Description { get; set; }
+		public string Type { get; set; }
 
 		/// <summary>
-		/// The number of times this module is being used
-		/// </summary>
-		public int Use_count { get; set; }
-
-		/// <summary>
-		/// The running status of this module
+		/// Whether or not a log type is enabled
 		/// </summary>
 		public string Status { get; set; }
 
 		/// <summary>
-		/// The support state of this module
+		/// The various log levels
 		/// </summary>
-		public string Support_level { get; set; }
+		public string Configuration { get; set; }
 
 	}
 }

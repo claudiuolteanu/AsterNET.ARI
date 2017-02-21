@@ -9,26 +9,26 @@ using AsterNET.ARI.Actions;
 namespace AsterNET.ARI.Models
 {
 	/// <summary>
-	/// A past recording that may be played back.
+	/// The state of a peer associated with an endpoint has changed.
 	/// </summary>
-	public class StoredRecording 
+	public class PeerStatusChangeEvent  : Event
 	{
 
 		/// <summary>
 		///
 		/// </summary>
-		// public RecordingsActions Recording { get; set; }
+		// public EventsActions Event { get; set; }
 
 
 		/// <summary>
 		/// no description provided
 		/// </summary>
-		public string Name { get; set; }
+		public Endpoint Endpoint { get; set; }
 
 		/// <summary>
 		/// no description provided
 		/// </summary>
-		public string Format { get; set; }
+		public Peer Peer { get; set; }
 
 	}
 }

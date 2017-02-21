@@ -9,26 +9,26 @@ using AsterNET.ARI.Actions;
 namespace AsterNET.ARI.Models
 {
 	/// <summary>
-	/// A past recording that may be played back.
+	/// Notification that the source of video in a bridge has changed.
 	/// </summary>
-	public class StoredRecording 
+	public class BridgeVideoSourceChangedEvent  : Event
 	{
 
 		/// <summary>
 		///
 		/// </summary>
-		// public RecordingsActions Recording { get; set; }
+		// public EventsActions Event { get; set; }
 
 
 		/// <summary>
 		/// no description provided
 		/// </summary>
-		public string Name { get; set; }
+		public Bridge Bridge { get; set; }
 
 		/// <summary>
 		/// no description provided
 		/// </summary>
-		public string Format { get; set; }
+		public string Old_video_source_id { get; set; }
 
 	}
 }

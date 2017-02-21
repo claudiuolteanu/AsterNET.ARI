@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:10
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System;
 using System.Collections.Generic;
@@ -26,11 +26,6 @@ namespace AsterNET.ARI.Models
 		public string Id { get; set; }
 
 		/// <summary>
-		/// no description provided
-		/// </summary>
-		public string State { get; set; }
-
-		/// <summary>
 		/// Name of the channel (i.e. SIP/foo-0000a7e3)
 		/// </summary>
 		public string Name { get; set; }
@@ -38,12 +33,12 @@ namespace AsterNET.ARI.Models
 		/// <summary>
 		/// no description provided
 		/// </summary>
-		public CallerID Caller { get; set; }
+		public string State { get; set; }
 
 		/// <summary>
-		/// The default spoken language
+		/// no description provided
 		/// </summary>
-		public string Language { get; set; }
+		public CallerID Caller { get; set; }
 
 		/// <summary>
 		/// no description provided
@@ -64,6 +59,11 @@ namespace AsterNET.ARI.Models
 		/// Timestamp when channel was created
 		/// </summary>
 		public DateTime Creationtime { get; set; }
+
+		/// <summary>
+		/// The default spoken language
+		/// </summary>
+		public string Language { get; set; }
 
 	}
 }

@@ -1,6 +1,6 @@
 ﻿/*
 	AsterNET ARI Framework
-	Automatically generated file @ 06.07.2016 13:07:09
+	Automatically generated file @ 21.02.2017 16:42:34
 */
 using System;
 using System.Collections.Generic;
@@ -53,6 +53,17 @@ namespace AsterNET.ARI.Actions
 		/// <param name="bridgeId">Bridge's id</param>
 		/// <param name="channel">Ids of channels to remove from bridge</param>
 		void RemoveChannel(string bridgeId, string channel);
+		/// <summary>
+		/// Set a channel as the video source in a multi-party mixing bridge. This operation has no effect on bridges with two or fewer participants.. 
+		/// </summary>
+		/// <param name="bridgeId">Bridge's id</param>
+		/// <param name="channelId">Channel's id</param>
+		void SetVideoSource(string bridgeId, string channelId);
+		/// <summary>
+		/// Removes any explicit video source in a multi-party mixing bridge. This operation has no effect on bridges with two or fewer participants. When no explicit video source is set, talk detection will be used to determine the active video stream.. 
+		/// </summary>
+		/// <param name="bridgeId">Bridge's id</param>
+		void ClearVideoSource(string bridgeId);
 		/// <summary>
 		/// Play music on hold to a bridge or change the MOH class that is playing.. 
 		/// </summary>
