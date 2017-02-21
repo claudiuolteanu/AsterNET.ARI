@@ -20,7 +20,7 @@
 <#
 // System.Diagnostics.Debugger.Launch();
 var manager = TemplateFileManager.Create(this);
-var filesPath = @"E:\Projects\Github\AsterNET.ARI\CodeGeneratror\ARICodeGen\Data\";
+var filesPath = @"C:\Users\claudiu.olteanu\Source\Repos\AsterNET.ARI\CodeGeneratror\ARICodeGen\Data\";
 var files = new List<string>() { 
 	filesPath + "Events.json",
 	filesPath + "Bridges.json",
@@ -383,7 +383,7 @@ namespace AsterNET.ARI.Actions
 #>
 				default:
 					// Unknown server response
-					throw new AriException(string.Format("Unknown response code {0} from ARI.", response.StatusCode), (int)response.StatusCode);
+					throw new AriException(string.Format("Unknown response code from ARI. Error message {0}. Exception {1}", response.ErrorMessage, response.ErrorException.ToString()), (int)response.StatusCode);
             }
 		}
 <#		} 
