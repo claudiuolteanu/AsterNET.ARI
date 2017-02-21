@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 
 namespace AsterNET.ARI.Middleware.Default
 {
@@ -7,6 +8,8 @@ namespace AsterNET.ARI.Middleware.Default
     {
         public string UniqueId { get; set; }
         public HttpStatusCode StatusCode { get; set; }
+        public Exception ErrorException { get; set; }
+        public string ErrorMessage { get; set; }
         public T Data { get; set; }
     }
 
@@ -14,5 +17,7 @@ namespace AsterNET.ARI.Middleware.Default
     {
         public string UniqueId { get; set; }
         public HttpStatusCode StatusCode { get; set; }
+        public Exception ErrorException { get; set; }
+        public string ErrorMessage { get; set; }
     }
 }
